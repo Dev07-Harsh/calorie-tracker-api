@@ -1,25 +1,70 @@
-Calorie Tracker API
+# Calorie Tracker API
 
-This repository contains a Node.js-based RESTful API for tracking food calorie and nutritional profiles. The API leverages Express and MongoDB (via Mongoose) to provide endpoints that allow users to search for food items by name or category, track nutritional intake based on consumption, and add new food items to the database.
+A RESTful API built with Node.js, Express, and MongoDB to track food calories and nutritional intake.
 
-Features:
+## Features
 
-Search Functionality:
-Supports partial and case-insensitive searches for food items, making it easier to find the right food even if the name isn't perfectly spelled.
-Nutrient Tracking:
-Scale nutritional values based on serving quantity and compare the results against recommended daily allowances (RDA).
-Data Management:
-Easily add new food items to the database, with a flexible schema supporting various nutritional metrics.
-MongoDB Integration:
-Uses MongoDB Atlas for storing and querying a large collection of food nutritional data.
-Tech Stack:
+- **Search Foods**: Find food items by name or category with case-insensitive and partial matching.
+- **Track Nutrients**: Calculate nutritional intake based on serving size and compare with recommended daily allowances (RDA).
+- **Add New Foods**: Insert new food items into the database with detailed nutritional information.
+- **MongoDB Integration**: Stores and queries food nutritional data using MongoDB Atlas.
 
-Node.js & Express for the API server
-MongoDB Atlas for the database
-Mongoose for ODM
-Getting Started:
+## Tech Stack
 
-Clone the repository.
-Install dependencies using npm install.
-Set up your environment variables (e.g., MONGODB_URI) in a .env file.
-Run the API locally with node api/index.js to test the endpoints.
+- **Node.js & Express**: Backend server and API handling.
+- **MongoDB & Mongoose**: Database and object data modeling.
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js**
+- **MongoDB Atlas Account**
+- **Git**
+
+### Installation
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/Dev07-Harsh/calorie-tracker-api.git
+   cd calorie-tracker-api
+   ```
+
+2. **Install Dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Set Up Environment Variables:**
+
+   - Create a `.env` file in the root directory:
+     ```
+     MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/food_db?retryWrites=true&w=majority
+     ```
+   - Replace `<username>` and `<password>` with your MongoDB Atlas credentials.
+
+### Running the API Locally
+
+Start the server:
+
+```bash
+node api/index.js
+```
+
+The API will be accessible at `http://localhost:3000`.
+
+## API Endpoints
+
+### Food Endpoints
+
+- **GET /api/foods**: Retrieve all food items.
+- **GET /api/search?q=**: Search food items by name or category.
+- **POST /api/foods**: Add a new food item.
+- **POST /api/track**: Track nutrient intake based on food consumption.
+
+---
+
+**Developed with ❤️ by [Harsh]**
+
